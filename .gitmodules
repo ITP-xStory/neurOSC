@@ -1,0 +1,3 @@
+[submodule "CyKit"]
+	path = CyKit
+	url = https://github.com/CymatiCorp/CyKit.git
