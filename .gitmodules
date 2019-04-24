@@ -1,3 +1,6 @@
 [submodule "CyKit"]
 	path = CyKit
 	url = https://github.com/CymatiCorp/CyKit.git
+[submodule "emokit-c"]
+	path = emokit-c
+	url = https://github.com/mhrahmani/emokit-c.git
