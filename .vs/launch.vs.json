@@ -1,0 +1,18 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "python",
+      "interpreter": "(default)",
+      "interpreterArguments": "",
+      "scriptArguments": "",
+      "env": {},
+      "nativeDebug": false,
+      "webBrowserUrl": "",
+      "project": "CyKIT2\\Python\\CyKITv2.py",
+      "name": "CyKITv2.py",
+      "workingDirectory": "CyKIT2\\Python"
+    }
+  ]
+}

@@ -72,9 +72,7 @@ class MyIO():
                     print "Format Change (Format-0): Python handling float conversion.\r\n"
             if ioCommand[1] == "InfoRequest":
                 self.server.sendData("CyKITv2:::Info:::Device:::" + str(self.infoDevice))
-                print ("$$ CyKITv2:::Info:::Device:::" + str(self.infoDevice))
                 self.server.sendData("CyKITv2:::Info:::Serial:::" + str(self.infoSerial))
-                print ("$$ CyKITv2:::Info:::Serial:::" + str(self.infoSerial))
             if ioCommand[1] == "UpdateSettings":
                 self.update_epoc = int(ioCommand[2])
                 
@@ -174,11 +172,10 @@ class MyIO():
         if self.noheader == True:
             return
         self.server.sendData("CyKITv2:::Connected")
-        print "$$ CyKITv2:::Connected"
         return
     
     def setOVSamples (self, samples):
-        self.ovSamples = int(samples)   #################### 2222222 HERREEEE
+        self.ovSamples = int(samples)
         print "OpenVibe Samples: " + str(samples)
         return
     
@@ -243,7 +240,6 @@ class MyIO():
         if self.noheader == True:
             return
         self.server.sendData("CyKITv2:::Connected")
-        print "$$ CyKITv2:::Connected"
         return
     
     def sendOVint(self, data):
@@ -474,7 +470,6 @@ class EEG(object):
         else:
             self.format = 0
             
-            ################# 11111111111111 HERE
         print "Format: " + str(self.format)
         self.myIOinstance.setOVSamples(self.ovSamples)
         self.myIOinstance.setOVDelay(self.ovDelay)
@@ -645,16 +640,9 @@ class EEG(object):
         if self.myIOinstance.getHeader() == False:
             if self.myIOinstance.status == True:
                 myio.sendData(1, "CyKITv2:::Info:::Device:::" + str(self.hid.product_name))
-                print ("$$ " + str(self.hid.product_name))
-
                 myio.sendData(1, "CyKITv2:::Info:::Serial:::" + str(self.hid.serial_number))
-                print ("$$ CyKITv2:::Info:::Serial:::" + str(self.hid.serial_number))
-
                 myio.sendData(1, "CyKITv2:::Info:::KeyModel:::" + str(self.KeyModel))
-                print ("$$ CyKITv2:::Info:::KeyModel:::" + str(self.KeyModel))
-
                 myio.sendData(1, "CyKITv2:::Info:::Delimiter:::" + str(self.Delimiter))
-                print ("$$ CyKITv2:::Info:::Delimiter:::" + str(self.Delimiter))
             
         self.generic = self.myIOinstance.isGeneric()
         
@@ -839,7 +827,6 @@ class EEG(object):
                             
                         else:
                             myio.sendData(1, counter_data + packet_data)
-                            print ("$$ counter_data, packet_data" + counter_data + packet_data)
                         
 
                     except Exception, msg:

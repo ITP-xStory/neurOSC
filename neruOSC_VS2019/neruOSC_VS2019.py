@@ -1,9 +1,11 @@
 # -*- coding: utf8 -*-
 #
-# CyKIT v2 - 2018.Jan.29
+# NeurOSC v0.1 - May.20.2019
 # ========================
-# Written by Warren
+# Written by  MH.Rahmani
 #
+# based on CyKITv2 by Warren
+# based on emokit
 
 import sys
 import socket
@@ -86,8 +88,11 @@ def main(CyINIT):
     # Initialize CyKIT 
     if CyINIT == 2:
         global ioTHREAD
-        print "> Listening on " + HOST + " : " + str(PORT)
+        print "> Listening on " + HOST + " : " + str(PORT)  # REMOVE
         print "> Trying Key Model #: " + str(MODEL)
+
+
+        # 1.DEVICE IS DEFINED HERE
         
         myi = eeg.MyIO()
         
@@ -95,6 +100,7 @@ def main(CyINIT):
             myi.setHeader(True)
         if "openvibe" in parameters:
             myi.setOpenvibe(True)
+            ###################### 2. This is where the connection attempt happens
         if "generic" in parameters:
             ioTHREAD = CyWebSocket.socketIO(PORT, 0, myi)
         else:

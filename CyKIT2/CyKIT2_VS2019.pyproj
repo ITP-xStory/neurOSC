@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9bc9bc5a-e1ea-4edc-af01-3c27f754932b}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>Python\CyKITv2.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>Global|PythonCore|2.7-32</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Python\CyCSS.css" />
+    <Content Include="Python\cyUSB\LICENSE.txt" />
+    <Content Include="Web\cyCSS.css" />
+    <Content Include="Web\CyInterface.js" />
+    <Content Include="Web\CyKITv2.html" />
+    <Content Include="Web\CySocketClient.js" />
+    <Content Include="Web\Images\blue-bg.png" />
+    <Content Include="Web\Images\CyKITv2-bg-off.png" />
+    <Content Include="Web\Images\CyKITv2-bg-on.png" />
+    <Content Include="Web\Images\gloss.png" />
+    <Content Include="Web\Images\graph.png" />
+    <Content Include="Web\w3.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Python\Crypto\Cipher\AES.py" />
+    <Compile Include="Python\Crypto\Cipher\blockalgo.py" />
+    <Compile Include="Python\Crypto\Cipher\__init__.py" />
+    <Compile Include="Python\Crypto\Hash\hashalgo.py" />
+    <Compile Include="Python\Crypto\Hash\HMAC.py" />
+    <Compile Include="Python\Crypto\Hash\MD2.py" />
+    <Compile Include="Python\Crypto\Hash\MD4.py" />
+    <Compile Include="Python\Crypto\Hash\MD5.py" />
+    <Compile Include="Python\Crypto\Hash\RIPEMD.py" />
+    <Compile Include="Python\Crypto\Hash\SHA.py" />
+    <Compile Include="Python\Crypto\Hash\SHA224.py" />
+    <Compile Include="Python\Crypto\Hash\SHA256.py" />
+    <Compile Include="Python\Crypto\Hash\SHA384.py" />
+    <Compile Include="Python\Crypto\Hash\SHA512.py" />
+    <Compile Include="Python\Crypto\Hash\__init__.py" />
+    <Compile Include="Python\Crypto\pct_warnings.py" />
+    <Compile Include="Python\Crypto\Random\Fortuna\FortunaAccumulator.py" />
+    <Compile Include="Python\Crypto\Random\Fortuna\FortunaGenerator.py" />
+    <Compile Include="Python\Crypto\Random\Fortuna\SHAd256.py" />
+    <Compile Include="Python\Crypto\Random\Fortuna\__init__.py" />
+    <Compile Include="Python\Crypto\Random\OSRNG\fallback.py" />
+    <Compile Include="Python\Crypto\Random\OSRNG\nt.py" />
+    <Compile Include="Python\Crypto\Random\OSRNG\posix.py" />
+    <Compile Include="Python\Crypto\Random\OSRNG\rng_base.py" />
+    <Compile Include="Python\Crypto\Random\OSRNG\__init__.py" />
+    <Compile Include="Python\Crypto\Random\random.py" />
+    <Compile Include="Python\Crypto\Random\_UserFriendlyRNG.py" />
+    <Compile Include="Python\Crypto\Random\__init__.py" />
+    <Compile Include="Python\Crypto\Util\asn1.py" />
+    <Compile Include="Python\Crypto\Util\Counter.py" />
+    <Compile Include="Python\Crypto\Util\number.py" />
+    <Compile Include="Python\Crypto\Util\py21compat.py" />
+    <Compile Include="Python\Crypto\Util\py3compat.py" />
+    <Compile Include="Python\Crypto\Util\randpool.py" />
+    <Compile Include="Python\Crypto\Util\RFC1751.py" />
+    <Compile Include="Python\Crypto\Util\winrandom.py" />
+    <Compile Include="Python\Crypto\Util\_number_new.py" />
+    <Compile Include="Python\Crypto\Util\__init__.py" />
+    <Compile Include="Python\Crypto\__init__.py" />
+    <Compile Include="Python\CyKITv2-2.py" />
+    <Compile Include="Python\CyKITv2.py" />
+    <Compile Include="Python\cyUSB\core.py" />
+    <Compile Include="Python\cyUSB\helpers.py" />
+    <Compile Include="Python\cyUSB\hid_pnp_mixin.py" />
+    <Compile Include="Python\cyUSB\winapi.py" />
+    <Compile Include="Python\cyUSB\wnd_hook_mixin.py" />
+    <Compile Include="Python\cyUSB\__init__.py" />
+    <Compile Include="Python\CyWebSocket.py" />
+    <Compile Include="Python\eeg.py" />
+    <Compile Include="Python\oscOut.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Python" />
+    <Folder Include="Python\Crypto" />
+    <Folder Include="Python\Crypto\Cipher" />
+    <Folder Include="Python\Crypto\Hash" />
+    <Folder Include="Python\Crypto\Random" />
+    <Folder Include="Python\Crypto\Random\Fortuna" />
+    <Folder Include="Python\Crypto\Random\OSRNG" />
+    <Folder Include="Python\Crypto\Util" />
+    <Folder Include="Python\cyUSB" />
+    <Folder Include="Web" />
+    <Folder Include="Web\Images" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|2.7-32" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
