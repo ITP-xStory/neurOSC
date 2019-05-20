@@ -33,6 +33,9 @@
     <Content Include="Web\w3.css" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Python\Backups\CyKITv2.py" />
+    <Compile Include="Python\Backups\CyWebSocket.py" />
+    <Compile Include="Python\Backups\eeg.py" />
     <Compile Include="Python\Crypto\Cipher\AES.py" />
     <Compile Include="Python\Crypto\Cipher\blockalgo.py" />
     <Compile Include="Python\Crypto\Cipher\__init__.py" />
@@ -72,7 +75,6 @@
     <Compile Include="Python\Crypto\Util\_number_new.py" />
     <Compile Include="Python\Crypto\Util\__init__.py" />
     <Compile Include="Python\Crypto\__init__.py" />
-    <Compile Include="Python\CyKITv2-2.py" />
     <Compile Include="Python\CyKITv2.py" />
     <Compile Include="Python\cyUSB\core.py" />
     <Compile Include="Python\cyUSB\helpers.py" />
@@ -82,7 +84,7 @@
     <Compile Include="Python\cyUSB\__init__.py" />
     <Compile Include="Python\CyWebSocket.py" />
     <Compile Include="Python\eeg.py" />
-    <Compile Include="Python\oscOut.py" />
+    <Compile Include="Python\options.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Python" />
@@ -94,6 +96,7 @@
     <Folder Include="Python\Crypto\Random\OSRNG" />
     <Folder Include="Python\Crypto\Util" />
     <Folder Include="Python\cyUSB" />
+    <Folder Include="Python\Backups\" />
     <Folder Include="Web" />
     <Folder Include="Web\Images" />
   </ItemGroup>

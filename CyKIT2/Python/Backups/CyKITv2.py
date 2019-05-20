@@ -71,7 +71,6 @@ if arg_count < 5:
    
     
    
-
 def main(CyINIT):
 
     parameters = str(sys.argv[4]).lower()
@@ -85,42 +84,31 @@ def main(CyINIT):
     MODEL = int(sys.argv[3])
     
     # Initialize CyKIT 
-    #if CyINIT == 2:
-    #    global ioTHREAD
-
-    #    print "> Listening on " + HOST + " : " + str(PORT)  # REMOVE
-    #    print "> Trying Key Model #: " + str(MODEL)
-
-
-        # 1.DEVICE IS DEFINED HERE
+    if CyINIT == 2:
+        global ioTHREAD
+        print "> Listening on " + HOST + " : " + str(PORT)
+        print "> Trying Key Model #: " + str(MODEL)
         
-    myi = eeg.MyIO()
+        myi = eeg.MyIO()
         
-    if "noheader" in parameters:
-        myi.setHeader(True)
-    if "openvibe" in parameters:
-        myi.setOpenvibe(True)
-
-
-            ###################### 2. This is where the connection attempt happens
-
-
-        #if "generic" in parameters:
-        #    ioTHREAD = CyWebSocket.socketIO(PORT, 0, myi)
+        if "noheader" in parameters:
+            myi.setHeader(True)
+        if "openvibe" in parameters:
+            myi.setOpenvibe(True)
+        if "generic" in parameters:
+            ioTHREAD = CyWebSocket.socketIO(PORT, 0, myi)
+        else:
+            ioTHREAD = CyWebSocket.socketIO(PORT, 1, myi)
+        myi.setServer(ioTHREAD)
+        check_connection = ioTHREAD.Connect()
+        cyIO = ioTHREAD.start()
         
-        #else:
-        #ioTHREAD = CyWebSocket.socketIO(PORT, 1, myi)
-        
-        #myi.setServer(ioTHREAD)
-        #check_connection = ioTHREAD.Connect()
-        #cyIO = ioTHREAD.start()
-        
-    cyHeadset = eeg.EEG(MODEL, myi, parameters).start()
-    for t in threading.enumerate():
-        print str(t.getName())
-    CyINIT += 1
-    if myi.getOpenvibe() == True:
-        time.sleep(3)
+        cyHeadset = eeg.EEG(MODEL, myi, parameters).start()
+        for t in threading.enumerate():
+            print str(t.getName())
+        CyINIT += 1
+        if myi.getOpenvibe() == True:
+            time.sleep(3)
         
     while CyINIT > 2:
         CyINIT += 1

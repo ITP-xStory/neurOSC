@@ -14,6 +14,10 @@ import CyWebSocket
 import threading
 import time
 
+
+
+
+
 arg_count = len(sys.argv)
 
 if arg_count == 1 or arg_count > 5 or sys.argv[1] == "help" or sys.argv[1] == "--help" or sys.argv[1] == "/?":
@@ -82,6 +86,9 @@ def main(CyINIT):
     HOST = str(sys.argv[1])
     PORT = int(sys.argv[2])
     MODEL = int(sys.argv[3])
+
+   
+
     
     # Initialize CyKIT 
     if CyINIT == 2:
