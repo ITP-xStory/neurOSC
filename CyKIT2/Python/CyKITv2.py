@@ -86,8 +86,11 @@ def main(CyINIT):
     # Initialize CyKIT 
     if CyINIT == 2:
         global ioTHREAD
-        print "> Listening on " + HOST + " : " + str(PORT)
+        print "> Listening on " + HOST + " : " + str(PORT)  # REMOVE
         print "> Trying Key Model #: " + str(MODEL)
+
+
+        # 1.DEVICE IS DEFINED HERE
         
         myi = eeg.MyIO()
         
@@ -95,6 +98,7 @@ def main(CyINIT):
             myi.setHeader(True)
         if "openvibe" in parameters:
             myi.setOpenvibe(True)
+            ###################### 2. This is where the connection attempt happens
         if "generic" in parameters:
             ioTHREAD = CyWebSocket.socketIO(PORT, 0, myi)
         else:
