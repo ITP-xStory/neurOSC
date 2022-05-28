@@ -67,7 +67,7 @@ if arg_count == 1 or arg_count > 5 or sys.argv[1] == "help" or sys.argv[1] == "-
 if arg_count < 5:
     
     if arg_count == 2:
-        sys.argv = [sys.argv[0], sys.argv[1], "55555", "1", ""]
+        sys.argv = [sys.argv[0], sys.argv[1], "8181", "1", ""]
     if arg_count == 3:
         sys.argv = [sys.argv[0], sys.argv[1], sys.argv[2], "1", ""]
     if arg_count == 4:
@@ -98,15 +98,15 @@ def main(CyINIT):
         
         myi = eeg.MyIO()
         
-        if "noheader" in parameters:
+        if "noheader" in parameters:  # NOTE extra parameters can be added here.
             myi.setHeader(True)
         if "openvibe" in parameters:
             myi.setOpenvibe(True)
         if "generic" in parameters:
             ioTHREAD = CyWebSocket.socketIO(PORT, 0, myi)
         else:
-            ioTHREAD = CyWebSocket.socketIO(PORT, 1, myi)
-        myi.setServer(ioTHREAD)
+            ioTHREAD = CyWebSocket.socketIO(PORT, 1, myi) # NOTE IO parameter assignment
+        myi.setServer(ioTHREAD) # server setup
         check_connection = ioTHREAD.Connect()
         cyIO = ioTHREAD.start()
         
