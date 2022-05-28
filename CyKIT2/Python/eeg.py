@@ -31,14 +31,6 @@ import cyUSB as hid
 from Crypto.Cipher import AES
 from Crypto import Random
 
-# Starting client where things happen
-from oscpy.client import OSCClient
-
-address = "127.0.0.1"
-port = 1221
-
-### Initialize OSC Client
-osc = OSCClient(address, port)
 
 DEVICE_POLL_INTERVAL = 0.001  # in seconds
 
@@ -848,7 +840,6 @@ class EEG(object):
                             
                         else:
                             myio.sendData(1, counter_data + packet_data)
-                            osc.send_message(u'/data')
                             print ("$$ counter_data, packet_data" + counter_data + packet_data)
                         
 
