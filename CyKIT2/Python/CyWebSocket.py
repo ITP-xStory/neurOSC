@@ -228,7 +228,7 @@ class socketIO():
         self.online = False
         self.io.onClose(self.uid)
 
-    def packData(self,text): # NOTE data string made here, for quick modification
+    def packData(self,text): # NOTE packet string made here, for quick modification
         sign = hashlib.new("md5",str(self.uid)+self.signKey).hexdigest()
         data = '%s<split>%s<split>%s'%(self.uid,sign,text)
         return data
