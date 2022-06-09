@@ -1,13 +1,13 @@
 # neurOSC
-a program for sending EEG brain wave data over OSC for easier use in research and multimedia projects. 
+a program for sending EEG brain wave data over OSC for easier use in real-time research and live multimedia projects. 
 
 ### Goals
 
-To make use of raw stream of brain-wave data as easy and seamless as possible. 
+To make use of raw stream of brain-wave data as easy as possible. 
 
 ### Tasks
 
-- [ ] Cleanup repo
+- [x] Cleanup repo
 - [ ] Changelog
 - [ ] Add console example
 - [ ] Write instructions
