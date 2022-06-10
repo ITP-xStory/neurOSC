@@ -15,6 +15,13 @@ import threading
 import time
 
 
+# Adding OSC using oscpy module installed
+from oscpy.client import 
+
+OSCHOST = "127.0.0.7"
+OSCPORT = 8001
+
+osc = OSCClient(OSCHOST, OSCPORT)
 
 
 
