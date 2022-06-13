@@ -15,14 +15,6 @@ import threading
 import time
 
 
-# Adding OSC using oscpy module installed
-from oscpy.client import 
-
-OSCHOST = "127.0.0.7"
-OSCPORT = 8001
-
-osc = OSCClient(OSCHOST, OSCPORT)
-
 
 
 arg_count = len(sys.argv)
@@ -104,14 +96,14 @@ def main(CyINIT):
         print "> Trying Key Model #: " + str(MODEL)
         
         myi = eeg.MyIO()
-        
+
         if "noheader" in parameters:  # NOTE extra parameters can be added here.
             myi.setHeader(True)
         if "openvibe" in parameters:
             myi.setOpenvibe(True)
         if "generic" in parameters:
             ioTHREAD = CyWebSocket.socketIO(PORT, 0, myi)
-        else:
+        else:  # TODO remove server creation and web connection
             ioTHREAD = CyWebSocket.socketIO(PORT, 1, myi) # NOTE IO parameter assignment
         myi.setServer(ioTHREAD) # server setup
         check_connection = ioTHREAD.Connect()

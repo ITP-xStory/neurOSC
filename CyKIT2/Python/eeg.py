@@ -31,6 +31,14 @@ import cyUSB as hid
 from Crypto.Cipher import AES
 from Crypto import Random
 
+### Adding OSC using oscpy module installed
+from oscpy.client import OSCClient
+
+OSCHOST = "127.0.0.7"
+OSCPORT = 8001
+
+osc = OSCClient(OSCHOST, OSCPORT)
+
 
 DEVICE_POLL_INTERVAL = 0.001  # in seconds
 
@@ -179,7 +187,7 @@ class MyIO():
         return
     
     def setOVSamples (self, samples):
-        self.ovSamples = int(samples)   #################### 2222222 HERREEEE
+        self.ovSamples = int(samples)
         print "OpenVibe Samples: " + str(samples)
         return
     
@@ -474,8 +482,8 @@ class EEG(object):
             self.format = int(myFormat[1][:1])
         else:
             self.format = 0
-            
-            ################# 11111111111111 HERE
+
+
         print "Format: " + str(self.format)
         self.myIOinstance.setOVSamples(self.ovSamples)
         self.myIOinstance.setOVDelay(self.ovDelay)
@@ -490,7 +498,7 @@ class EEG(object):
             if 'eegThread' == t.getName():
                 return
         self.running = True
-        self.thread.start()
+        self.thread.start()  ### Separate thread eegthread starts here
         return self.myIOinstance
 
     
@@ -763,7 +771,7 @@ class EEG(object):
                                 print str(counter_data + packet_data)
                     
                     if self.KeyModel == 6 or self.KeyModel == 5:
-                        
+
                         if self.no_counter == True:
                             counter_data = ""
                         else:
@@ -837,11 +845,13 @@ class EEG(object):
                                 myio.sendOVint(packet_data)
                             else:
                                 myio.sendOVfloat(packet_data)
-                            
+
+                        ### HERE is where the console print happens
                         else:
+                            osc.send_message(b'/ping', counter_data)
                             myio.sendData(1, counter_data + packet_data)
                             print ("$$ counter_data, packet_data" + counter_data + packet_data)
-                        
+
 
                     except Exception, msg:
                         if str(msg[0]) == "10035":

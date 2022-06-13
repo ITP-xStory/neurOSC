@@ -68,7 +68,7 @@ in the output data. May be useful for formatting data for other applications.
 Features
 --------
 
-* Uses Python threading.
+* Uses Python thre`ading.
 * Able to connect locally to localhost. (no need for http servers)
 * Scrolling
 * Able to make use of EEG data via javascript.
